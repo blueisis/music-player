@@ -35,7 +35,6 @@ figure {
     top: 50%;
     margin-top: -32.5vh;
     margin-left: -10vw;
-    border: 1px solid rgb(169, 233, 52);
 
     article {
       width: 100%;
@@ -47,7 +46,7 @@ figure {
       .inner {
         width: 100%;
         height: 100%;
-        background: #fff;
+        background: rgba(255, 255, 255, 0.3);
         padding: 5vh 2.5vw 8vh;
         box-shadow: 10px 10px 20px rgba(0,0,0,.5);
         transform: scale(0.8);
@@ -84,10 +83,10 @@ figure {
             width: 3vw;
             height: 3vw;
             border-radius: 50%;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.3);
             position: relative;
             z-index: 3;
-            box-shadow: inset 5px 5px 10px rgba(0,0,0,0.1);
+            box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
           }
         }
 
@@ -97,14 +96,14 @@ figure {
           z-index: 3;
 
           h2 {
-            font: normal 20px/1 'Arial';
-            color: #333;
+            font: normal 20px/1 'arial';
+            color: #fff;
             margin-bottom: 2vh;
           }
 
           p {
             font: normal 12px/1 'arial';
-            color: #777;
+            color: #fff;
             margin-bottom: 3vh;
           }
 
@@ -113,9 +112,9 @@ figure {
             justify-content: space-around;
             
             li {
-              opacity: 0.5;
               transform:scale(1); 
               transition:0.5s; 
+              color: #fff;
               cursor: pointer;
 
               &.play {
@@ -134,6 +133,92 @@ figure {
           }
         }
       }
+    }
+  }
+  
+  .btnPrev {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20vw, -50%);
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #fff;
+      transform: translateY(50%);
+      transform: rotate(-40deg);
+      transform-origin: left center;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #fff;
+      transform: translateY(50%);
+      transform: rotate(40deg);
+      transform-origin: left center;
+    }
+
+    span {
+      opacity: 0;
+      transform: translate(-100%);
+    }
+  }
+
+  .btnNext {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(20vw, -50%);
+    cursor: pointer;
+    
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background: #fff;
+      transform: translateY(50%);
+      transform: rotate(-40deg);
+      transform-origin: right center;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 50%;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background: #fff;
+      transform: translateY(50%);
+      transform: rotate(40deg);
+      transform-origin: right center;
+    }
+
+    span {
+      opacity: 0;
+      transform: translate(-100%);
     }
   }
 }
